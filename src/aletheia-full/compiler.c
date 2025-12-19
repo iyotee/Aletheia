@@ -68,26 +68,26 @@ void* realloc(void* ptr, size_t size) {
 }
 
 /* Simplified string functions */
-size_t strlen(const char* s) {
+size_t al_strlen(const char* s) {
     size_t len = 0;
     while (s[len]) len++;
     return len;
 }
 
-char* strcpy(char* dest, const char* src) {
+char* al_strcpy(char* dest, const char* src) {
     char* d = dest;
     while ((*d++ = *src++));
     return dest;
 }
 
-char* strdup(const char* s) {
-    size_t len = strlen(s) + 1;
+char* al_strdup(const char* s) {
+    size_t len = al_strlen(s) + 1;
     char* dup = malloc(len);
-    if (dup) strcpy(dup, s);
+    if (dup) al_strcpy(dup, s);
     return dup;
 }
 
-int strcmp(const char* s1, const char* s2) {
+int al_strcmp(const char* s1, const char* s2) {
     while (*s1 && (*s1 == *s2)) {
         s1++;
         s2++;
@@ -95,7 +95,7 @@ int strcmp(const char* s1, const char* s2) {
     return *(unsigned char*)s1 - *(unsigned char*)s2;
 }
 
-char* strstr(const char* haystack, const char* needle) {
+char* al_strstr(const char* haystack, const char* needle) {
     if (!*needle) return (char*)haystack;
 
     for (; *haystack; haystack++) {
@@ -147,7 +147,7 @@ size_t fwrite(const void* ptr, size_t size, size_t count, FILE* stream) {
 }
 
 /* Simplified standard functions */
-void* memset(void* s, int c, size_t n) {
+void* al_memset(void* s, int c, size_t n) {
     char* p = (char*)s;
     for (size_t i = 0; i < n; i++) {
         p[i] = (char)c;
@@ -155,7 +155,7 @@ void* memset(void* s, int c, size_t n) {
     return s;
 }
 
-void* memcpy(void* dest, const void* src, size_t n) {
+void* al_memcpy(void* dest, const void* src, size_t n) {
     char* d = (char*)dest;
     const char* s = (const char*)src;
     for (size_t i = 0; i < n; i++) {
@@ -226,10 +226,10 @@ void ai_learn_from_compilation(const char* source, const char* result) {
 void security_scan_code(const char* source) {
     /* Basic security scan */
     /* Look for common vulnerabilities */
-    if (strstr(source, "gets(")) {
+    if (al_strstr(source, "gets(")) {
         /* Warning about unsafe gets */
     }
-    if (strstr(source, "strcpy(")) {
+    if (al_strstr(source, "strcpy(")) {
         /* Warning about potential buffer overflow */
     }
 }
@@ -253,9 +253,9 @@ void code_quality_report(const char* source) {
 /* Multi-target Support Implementation */
 int supports_architecture(const char* arch) {
     /* Check if architecture is supported */
-    if (strcmp(arch, "x86_64") == 0) return 1;
-    if (strcmp(arch, "arm64") == 0) return 1;
-    if (strcmp(arch, "riscv") == 0) return 1;
+    if (al_strcmp(arch, "x86_64") == 0) return 1;
+    if (al_strcmp(arch, "arm64") == 0) return 1;
+    if (al_strcmp(arch, "riscv") == 0) return 1;
     return 0;
 }
 

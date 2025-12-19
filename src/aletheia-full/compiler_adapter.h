@@ -26,18 +26,18 @@ void* malloc(size_t size);
 void free(void* ptr);
 void* realloc(void* ptr, size_t size);
 
-/* String functions */
-size_t strlen(const char* s);
-char* strcpy(char* dest, const char* src);
-char* strdup(const char* s);
-int strcmp(const char* s1, const char* s2);
-char* strstr(const char* haystack, const char* needle);
+/* String functions - implemented locally to avoid system conflicts */
+size_t al_strlen(const char* s);
+char* al_strcpy(char* dest, const char* src);
+char* al_strdup(const char* s);
+int al_strcmp(const char* s1, const char* s2);
+char* al_strstr(const char* haystack, const char* needle);
 
 /* File I/O - using standard stdio.h */
 
-/* Standard library functions */
-void* memset(void* s, int c, size_t n);
-void* memcpy(void* dest, const void* src, size_t n);
+/* Standard library functions - implemented locally */
+void* al_memset(void* s, int c, size_t n);
+void* al_memcpy(void* dest, const void* src, size_t n);
 
 /* Math functions (basic) */
 double sqrt(double x);

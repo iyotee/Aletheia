@@ -8,6 +8,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+// strdup is implemented in self_learning_ai.c
+
 // AI Integration stubs
 int ai_init(void) {
     printf(";; AI: Initializing AI system (stub)\n");

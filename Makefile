@@ -9,15 +9,15 @@ all: aletheia-full mescc-ale aletheia-core backends
 # Build targets
 aletheia-full:
 	@echo "Building ALETHEIA-Full (AI Compiler)..."
-	cd src/aletheia-full && $(MAKE)
+	cd src/aletheia-full && make
 
 mescc-ale:
 	@echo "Building MesCC-ALE (Bootstrap Compiler)..."
-	cd src/mescc-ale && $(MAKE)
+	cd src/mescc-ale && make
 
 aletheia-core:
 	@echo "Building ALETHEIA-Core (Core Compiler)..."
-	cd src/aletheia-core && $(MAKE)
+	cd src/aletheia-core && make
 
 backends:
 	@echo "Building multi-target backends..."
@@ -157,9 +157,9 @@ verify-bootstrap:
 # Development helpers
 clean:
 	@echo "Cleaning build artifacts..."
-	cd src/aletheia-full && $(MAKE) clean
-	cd src/mescc-ale && $(MAKE) clean
-	cd src/aletheia-core && $(MAKE) clean
+	cd src/aletheia-full && make clean
+	cd src/mescc-ale && make clean
+	cd src/aletheia-core && make clean
 	rm -rf build/ release/
 
 distclean: clean

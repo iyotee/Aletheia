@@ -9,6 +9,33 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
+#include <ctype.h>
+
+// isalpha is already defined in ctype.h
+
+// Implement missing functions for cross-platform compatibility
+#ifndef HAVE_STRDUP
+char* strdup(const char* s) {
+    size_t len = strlen(s) + 1;
+    char* dup = (char*)malloc(len);
+    if (dup) {
+        memcpy(dup, s, len);
+    }
+    return dup;
+}
+#endif
+
+#ifndef HAVE_FMIN
+double fmin(double a, double b) {
+    return (a < b) ? a : b;
+}
+#endif
+
+#ifndef HAVE_FMAX
+double fmax(double a, double b) {
+    return (a > b) ? a : b;
+}
+#endif
 
 // Python integration for PyTorch model
 // This is a simplified interface - in production would use proper C API
