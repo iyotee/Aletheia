@@ -1,0 +1,85 @@
+# ALETHEIA - Revolutionary Self-Hosting AI Compiler v1.0.0
+
+# Build artifacts
+*.o
+*.exe
+*.bin
+*.hex
+*.s
+*.asm
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*.backup
+*~
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# AI Training artifacts (keep only final models)
+ai/dataset/
+ai/training/
+ai/models/*.pt
+ai/models/*.pkl
+ai/models/*.h5
+!ai/models/aletheia_real_final.pt
+!ai/models/aletheia_real_metadata.json
+!ai/requirements.txt
+!ai/README.md
+
+# Test outputs
+tests/outputs/
+tests/debug_*
+tests/test_final*
+tests/simple*
+benchmarks/results/
+
+# Release artifacts
+release/
+*.deb
+*.rpm
+*.pkg
+*.dmg
+*.msi
+*.snap
+
+# CI/CD
+ci/logs/
+
+# Bootstrap temporaries (keep essential hex files)
+src/*/nul
+src/*/*.exe
+src/*/*.o
+src/*/*.bin
+!src/stage0/hex0.bin
+!src/mescc-ale/mescc-ale.hex
+
+# Legacy documentation
+docs/newPrompt.md
+docs/IA.md
+docs/TODO.md
+
+
+
+
