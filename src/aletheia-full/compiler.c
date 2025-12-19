@@ -197,8 +197,9 @@ time_t time(time_t* t) {
 }
 
 void exit(int status) {
-    /* Bootstrap exit */
-    _exit(status);
+    /* Bootstrap exit - simplified for bootstrap environment */
+    /* In a real system, this would call the OS exit syscall */
+    (void)status; /* Suppress unused parameter warning */
 }
 
 void abort(void) {

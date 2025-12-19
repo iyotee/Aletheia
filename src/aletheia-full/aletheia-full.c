@@ -10,7 +10,7 @@
 #include "ai_integration.h"
 #include "../backends/backend.h"
 
-// Forward declarations
+// Forward declarations to avoid typedef redefinition warnings
 typedef struct ASTNode ASTNode;
 typedef struct Symbol Symbol;
 typedef struct Scope Scope;
@@ -270,7 +270,7 @@ void phase_linking(ALETHEIAFullCompiler* compiler) {
 // Main compiler entry point
 int compile_gcc100(ALETHEIAFullCompiler* compiler, const char* input) {
     printf(";; ===========================================\n");
-    printf(";; ALETHEIA-Full: GCC compatible% Compatible Compiler + AI\n");
+    printf(";; ALETHEIA-Full: GCC compatible Compiler + AI\n");
     printf(";; ===========================================\n");
     printf(";; Features: GCC extensions, optimizations, preprocessor, linker, DWARF + AI\n");
     printf(";; Input: %s\n", compiler->input_filename);
